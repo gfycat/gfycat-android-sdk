@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+
+        applicationId "com.gfycat.sdk.sample"
+
+        minSdkVersion 16
+        targetSdkVersion 25
+
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+    }
+}
+
+dependencies {
+    compile 'com.gfycat.android:gfycat-keyboard:0.0.7'
+}
+
+repositories {
+    jcenter()
+    maven {
+        url 'https://gfycat.bintray.com/maven/' // temporary, while library is not available at jcenter.
+    }
+}
