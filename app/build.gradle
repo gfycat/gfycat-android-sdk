@@ -27,12 +27,9 @@ android {
 }
 
 dependencies {
-    compile 'com.gfycat.android:gfycat-keyboard:0.0.7'
+    compile 'com.gfycat.android:gfycat-keyboard:0.0.8'
 }
 
 repositories {
     jcenter()
-    maven {
-        url 'https://gfycat.bintray.com/maven/' // temporary, while library is not available at jcenter.
-    }
 }

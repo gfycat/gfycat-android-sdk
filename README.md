@@ -1,14 +1,13 @@
 # SDK and SAMPLE is currently under development and not available for 3rd party usage #
 
-
 # Gfycat SDK for Android
  [ ![Latest](https://api.bintray.com/packages/gfycat/maven/gfycat-keyboard/images/download.svg) ](https://bintray.com/gfycat/maven/gfycat-keyboard/_latestVersion)
 
 This sdk allows you to integrate GIFs from https://gfycat.com to you application.
 
 ## Try it
- * Check this [Getting started guide](../master/initial_integration.md)
- * Or you may look at [Application sample](../master/app) in this repository
+ * Check this [Integration steps](http://developers.gfycat.com/androidsdk/#integration-steps)
+ * Or you may look at [Application sample](http://developers.gfycat.com/androidsdk) in this repository
 
 ## Features
 Gfycat picker component may be integrated as custom keyboard or as separate screen
@@ -27,6 +26,5 @@ Except as otherwise noted, the Gfycat SDK for Android is licensed under the Gfyc
  * Categories screen in [Gfycat Loops](https://play.google.com/store/apps/details?id=com.gfycat)
 
 ## Futher reading
- * [Getting started guide](../master/initial_integration.md)
- * [SDK documentation](../master/other.md)
- * ***Javadoc TODO***
+ * [Integration steps](http://developers.gfycat.com/androidsdk/#integration-steps)
+ * [SDK documentation](http://developers.gfycat.com/androidsdk)
