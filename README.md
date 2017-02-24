@@ -1,5 +1,3 @@
-# SDK and SAMPLE is currently under development and not available for 3rd party usage #
-
 # Gfycat SDK for Android
  [ ![Latest](https://api.bintray.com/packages/gfycat/maven/gfycat-keyboard/images/download.svg) ](https://bintray.com/gfycat/maven/gfycat-keyboard/_latestVersion)
 
