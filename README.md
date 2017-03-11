@@ -1,28 +1,25 @@
 # Gfycat SDK for Android
  [ ![Latest](https://api.bintray.com/packages/gfycat/maven/gfycat-keyboard/images/download.svg) ](https://bintray.com/gfycat/maven/gfycat-keyboard/_latestVersion)
 
-This sdk allows you to integrate GIFs from https://gfycat.com to you application.
+This SDK allows you integrate GIFs from [Gfycat](https://gfycat.com) into your application.
 
 ## Try it
- * Check this [Integration steps](http://developers.gfycat.com/androidsdk/#integration-steps)
- * Or you may look at [Application sample](http://developers.gfycat.com/androidsdk) in this repository
+ * Find all the information about this SDK at http://developers.gfycat.com/androidsdk
+ * Check-out our integration manual at http://developers.gfycat.com/androidsdk/#integration-steps
 
 ## Features
-Gfycat picker component may be integrated as custom keyboard or as separate screen
+Gfycat Keyboard can be used as a keyboard or as a separate screen inside your application. It is up to you how to use it.
 
-![GfycatPicker view](https://thumbs.gfycat.com/AdolescentChubbyGecko-size_restricted.gif "How it is look like")
+![GfycatKeyboardFragment](https://thumbs.gfycat.com/AdolescentChubbyGecko-size_restricted.gif "How it is look like")
 
 ## Feedback
 Feel free to raise issues at https://github.com/gfycat/gfycat-android-sdk/issues
 
 ## License
-Except as otherwise noted, the Gfycat SDK for Android is licensed under the Gfycat License
-(https://github.com/GfycatOrg/gfycat-android-sdk/blob/master/LICENSE)
+Except as otherwise noted, Gfycat SDK for Android is licensed under the Gfycat License (https://github.com/gfycat/gfycat-android-sdk/blob/master/LICENSE).
+
+Gfycat expressly disclaims any and all warranties for the Software Product. The Software Product and any related documentation is provided “AS IS” WITHOUT WARRANTY OF ANY KIND, either express or implied, including, without limitation, the implied warranties or merchantability, fitness for a particular purpose, or non-infringement. See the License for the specific language governing permissions and limitations under the License.
 
 ## Existing integrations
- * GIF Keyboard in [Tango](https://play.google.com/store/apps/details?id=com.sgiggle.production)
- * Categories screen in [Gfycat Loops](https://play.google.com/store/apps/details?id=com.gfycat)
-
-## Futher reading
- * [Integration steps](http://developers.gfycat.com/androidsdk/#integration-steps)
- * [SDK documentation](http://developers.gfycat.com/androidsdk)
+ * GIF Keyboard in [Tango - Free Video Call & Chat](https://play.google.com/store/apps/details?id=com.sgiggle.production)
+ * GIF search and share screen in [Gfycat Loops: GIF Cam+Recorder](https://play.google.com/store/apps/details?id=com.gfycat)
