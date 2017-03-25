@@ -22,9 +22,9 @@ public class MyApplication extends Application {
         // (Optional) Customize cache folder for Gfycat files
         try {
             builder.setCacheFolder(getCacheDir());
-        } catch (GfyCoreInitializationBuilder.CacheFolderNotExists |
-                GfyCoreInitializationBuilder.CacheFolderIsNotDirectory cacheFolderIsNotDirectory) {
-            cacheFolderIsNotDirectory.printStackTrace();
+        } catch (GfyCoreInitializationBuilder.CacheFolderDoesNotExist |
+                 GfyCoreInitializationBuilder.CacheFolderIsNotDirectory cacheFolderException) {
+            cacheFolderException.printStackTrace();
         }
 
         // (Optional) Customize minimum and maximum cache storage space dedicated for Gfycat files.

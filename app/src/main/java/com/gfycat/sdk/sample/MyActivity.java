@@ -1,8 +1,7 @@
 package com.gfycat.sdk.sample;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.support.v7.app.AppCompatActivity;
 
 import com.gfycat.core.FeedIdentifier;
 import com.gfycat.core.gfycatapi.pojo.Gfycat;
@@ -16,7 +15,7 @@ public class MyActivity extends AppCompatActivity {
     }
 
     public boolean gfycatSelected(FeedIdentifier identifier, Gfycat gfycat, int position) {
-        Toast.makeText(this, gfycat.getGfyId(), Toast.LENGTH_SHORT).show();
+        startActivity(GfycatWebpViewActivity.createIntent(this, gfycat));
         return false;
     }
 }

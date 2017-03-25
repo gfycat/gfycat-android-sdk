@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">App</string>
+    <string name="app_name">Gfycat SDK Sample</string>
+
+    <string name="tap_to_play">Tap to play animation</string>
+
+    <string name="gfycat_name">Name: </string>
+    <string name="gfycat_created_date">Created: </string>
+    <string name="gfycat_width_height">Width x Height: </string>
+    <string name="gfycat_tags">Tags: </string>
 </resources>

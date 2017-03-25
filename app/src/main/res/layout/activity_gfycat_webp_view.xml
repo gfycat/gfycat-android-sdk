@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.gfycat.sdk.sample.GfycatWebpViewActivity">
+
+    <com.gfycat.webp.view.GfycatWebpView
+        android:id="@+id/webp_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:shouldLoadPreview="true" />
+
+    <TextView
+        android:id="@+id/tap_to_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tap_to_play"
+        android:textSize="8sp" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gfycat_name" />
+
+        <TextView
+            android:id="@+id/gfycat_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Gfycat Title" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gfycat_created_date" />
+
+        <TextView
+            android:id="@+id/gfycat_created"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="01/01/2017 00:00:00 PST" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gfycat_width_height" />
+
+        <TextView
+            android:id="@+id/gfycat_width_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="600 x 480" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gfycat_tags" />
+
+        <TextView
+            android:id="@+id/gfycat_tags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="[fun, cat, cute]" />
+    </GridLayout>
+
+</LinearLayout>
