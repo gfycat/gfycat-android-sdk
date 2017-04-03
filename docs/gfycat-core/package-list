@@ -1,6 +1,8 @@
 com.gfycat.core
 com.gfycat.core.authentication
 com.gfycat.core.contentmanagement
+com.gfycat.core.creation
+com.gfycat.core.creation.pojo
 com.gfycat.core.downloading
 com.gfycat.core.gfycatapi.pojo
 com.gfycat.core.storage
