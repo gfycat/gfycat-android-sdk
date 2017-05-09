@@ -27,7 +27,7 @@ android {
 }
 
 dependencies {
-    compile 'com.gfycat.android:gfycat-keyboard:0.0.15'
+    compile 'com.gfycat.android:gfycat-picker:0.1.0'
 }
 
 repositories {
