@@ -1,5 +1,5 @@
 # Gfycat SDK for Android
- [ ![Latest](https://api.bintray.com/packages/gfycat/maven/gfycat-keyboard/images/download.svg) ](https://bintray.com/gfycat/maven/gfycat-keyboard/_latestVersion)
+ [ ![Latest](https://api.bintray.com/packages/gfycat/maven/gfycat-picker/images/download.svg) ](https://bintray.com/gfycat/maven/gfycat-picker/_latestVersion)
 
 This SDK allows you integrate GIFs from [Gfycat](https://gfycat.com) into your application.
 
@@ -8,7 +8,7 @@ This SDK allows you integrate GIFs from [Gfycat](https://gfycat.com) into your a
  * Check-out our integration manual at http://developers.gfycat.com/androidsdk/#integration-steps
 
 ## Features
-Gfycat Keyboard can be used as a keyboard or as a separate screen inside your application. It is up to you how to use it.
+Gfycat Picker can be used as a keyboard or as a separate screen inside your application. It is up to you how to use it.
 
 ![GfycatKeyboardFragment](https://thumbs.gfycat.com/AdolescentChubbyGecko-size_restricted.gif "How it is look like")
 
