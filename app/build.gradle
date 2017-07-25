@@ -27,7 +27,7 @@ android {
 }
 
 dependencies {
-    compile 'com.gfycat.android:gfycat-picker:0.1.0'
+    compile 'com.gfycat.android:gfycat-picker:0.2.0'
 }
 
 repositories {
