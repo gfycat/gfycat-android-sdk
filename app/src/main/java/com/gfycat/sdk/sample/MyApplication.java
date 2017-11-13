@@ -2,6 +2,7 @@ package com.gfycat.sdk.sample;
 
 import android.app.Application;
 
+import com.gfycat.common.utils.Logging;
 import com.gfycat.core.GfyCoreInitializationBuilder;
 import com.gfycat.core.GfyCoreInitializer;
 import com.gfycat.core.GfycatApplicationInfo;
@@ -13,6 +14,9 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        // Enable SDK logcat output to see the under-the-hood logs, if needed
+        Logging.setEnabled(true);
 
         // Create a builder with your application clientId and clientSecret
         GfyCoreInitializationBuilder builder = new GfyCoreInitializationBuilder(
