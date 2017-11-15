@@ -24,8 +24,12 @@ android {
     packagingOptions {
         exclude 'META-INF/LICENSE'
     }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
 }
 
 dependencies {
-    compile 'com.gfycat.android:gfycat-picker:0.3.0'
+    compile 'com.gfycat.android:gfycat-picker:0.3.1-SNAPSHOT'
 }
