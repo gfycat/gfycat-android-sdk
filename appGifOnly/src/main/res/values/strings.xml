@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Gfycat SDK Sample</string>
+    <string name="app_name">Gfycat SDK Sample (GIF only)</string>
 
-    <string name="tap_to_play">Tap to play WebP</string>
+    <string name="tap_to_play">Tap to play GIF</string>
 
     <string name="gfycat_name">Name: </string>
     <string name="gfycat_created_date">Created: </string>
