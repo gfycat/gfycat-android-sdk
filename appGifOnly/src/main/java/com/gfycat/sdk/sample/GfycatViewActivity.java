@@ -11,28 +11,28 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gfycat.core.gfycatapi.pojo.Gfycat;
-import com.gfycat.webp.view.GfycatWebpView;
+import com.gfycat.player.GfycatPlayer;
 
 import java.util.Date;
 
-public class GfycatWebpViewActivity extends AppCompatActivity {
+public class GfycatViewActivity extends AppCompatActivity {
     private static final String EXTRA_GFYCAT = "EXTRA_GFYCAT";
 
     public static Intent createIntent(Context context, Gfycat gfycat) {
-        Intent intent = new Intent(context, GfycatWebpViewActivity.class);
+        Intent intent = new Intent(context, GfycatViewActivity.class);
         // Gfycat object is Parcelable out of the box
         intent.putExtra(EXTRA_GFYCAT, gfycat);
         return intent;
     }
 
-    private GfycatWebpView webpView;
+    private GfycatPlayer playerView;
     private Gfycat gfycat;
     private View tapToPlayHint;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gfycat_webp_view);
+        setContentView(R.layout.activity_gfycat_view);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -44,10 +44,10 @@ public class GfycatWebpViewActivity extends AppCompatActivity {
         }
 
         tapToPlayHint = findViewById(R.id.tap_to_play);
-        webpView = findViewById(R.id.webp_view);
-        webpView.setupGfycat(gfycat);
-        webpView.setOnClickListener(v -> {
-            webpView.play();
+        playerView = findViewById(R.id.player_view);
+        playerView.setupGfycat(gfycat);
+        playerView.getView().setOnClickListener(v -> {
+            playerView.play();
             tapToPlayHint.setVisibility(View.INVISIBLE);
         });
 
