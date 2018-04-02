@@ -34,7 +34,7 @@ android {
 }
 
 dependencies {
-    compile ('com.gfycat.android:gfycat-picker:0.5.0') {
+    compile ('com.gfycat.android:gfycat-picker:0.6.0') {
         exclude module: 'gfycat-webp-player'
     }
 }
