@@ -2,15 +2,15 @@ apply plugin: 'com.android.application'
 
 android {
 
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
 
         applicationId "com.gfycat.sdk.sample.gifonly"
 
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 27
 
         versionCode 1
         versionName "1.0"
@@ -34,7 +34,7 @@ android {
 }
 
 dependencies {
-    compile ('com.gfycat.android:gfycat-picker:0.6.0') {
+    implementation ('com.gfycat.android:gfycat-picker:0.6.0') {
         exclude module: 'gfycat-webp-player'
     }
 }
