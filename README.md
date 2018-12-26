@@ -16,9 +16,7 @@ Gfycat Picker can be used as a keyboard or as a separate screen inside your appl
 Feel free to raise issues at https://github.com/gfycat/gfycat-android-sdk/issues
 
 ## License
-Except as otherwise noted, Gfycat SDK for Android is licensed under the Gfycat License (https://github.com/gfycat/gfycat-android-sdk/blob/master/LICENSE).
-
-Gfycat expressly disclaims any and all warranties for the Software Product. The Software Product and any related documentation is provided “AS IS” WITHOUT WARRANTY OF ANY KIND, either express or implied, including, without limitation, the implied warranties or merchantability, fitness for a particular purpose, or non-infringement. See the License for the specific language governing permissions and limitations under the License.
+Apache 2.0 license https://www.apache.org/licenses/LICENSE-2.0
 
 ## Existing integrations
  * GIF Keyboard in [Tango - Free Video Call & Chat](https://play.google.com/store/apps/details?id=com.sgiggle.production)
