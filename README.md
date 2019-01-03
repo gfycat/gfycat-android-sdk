@@ -18,6 +18,6 @@ Feel free to raise issues at https://github.com/gfycat/gfycat-android-sdk/issues
 ## License
 Apache 2.0 license https://www.apache.org/licenses/LICENSE-2.0
 
-## Existing integrations
+## Example integrations
  * GIF Keyboard in [Tango - Free Video Call & Chat](https://play.google.com/store/apps/details?id=com.sgiggle.production)
  * GIF search and share screen in [Gfycat Loops: GIF Cam+Recorder](https://play.google.com/store/apps/details?id=com.gfycat)
