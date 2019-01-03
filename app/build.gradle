@@ -34,5 +34,5 @@ android {
 }
 
 dependencies {
-    implementation 'com.gfycat.android:gfycat-picker:0.6.2'
+    implementation 'com.gfycat.android:gfycat-picker:0.7.+'
 }
