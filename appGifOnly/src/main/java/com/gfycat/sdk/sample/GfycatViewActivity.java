@@ -36,7 +36,7 @@ public class GfycatViewActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        gfycat = getIntent().getParcelableExtra(EXTRA_GFYCAT);
+        gfycat = (Gfycat) getIntent().getSerializableExtra(EXTRA_GFYCAT);
         if (gfycat == null) {
             Toast.makeText(this, "Incorrect Gfycat object", Toast.LENGTH_SHORT).show();
             finish();
