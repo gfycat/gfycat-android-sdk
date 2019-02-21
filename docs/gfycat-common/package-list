@@ -1,1 +1,13 @@
 com.gfycat.common
+com.gfycat.common.dialogs
+com.gfycat.common.fixes.immleak
+com.gfycat.common.lifecycledelegates
+com.gfycat.common.media
+com.gfycat.common.permissions
+com.gfycat.common.permissions.delegates
+com.gfycat.common.profile
+com.gfycat.common.recycler
+com.gfycat.common.recycler.decorations
+com.gfycat.common.test
+com.gfycat.common.utils
+com.gfycat.common.weakhandler
