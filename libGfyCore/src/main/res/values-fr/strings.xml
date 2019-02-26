@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Notification Channels -->
+    <string name="channel_video_ready_name">Vidéo Prête</string>
+    <string name="channel_video_ready_description">"Vidéo prête. Vous pouvez l'éditer et en créer un GIF."</string>
+
+    <string name="channel_gif_processing_name">GIF en traitement</string>
+    <string name="channel_gif_processing_description">Vous serez informé(e) que le GIF est en traitement</string>
+
+    <string name="channel_push_updates_name">Push updates</string>
+    <string name="channel_push_updates_description">Get latest updates from Gfycat</string>
+</resources>

@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gfycat.picker">
+
+    <application>
+        <meta-data
+            android:name="picker_categories_prefetch_plugin"
+            android:value="com.gfycat.picker.PickerCategoriesPrefetchPlugin" />
+    </application>
+</manifest>

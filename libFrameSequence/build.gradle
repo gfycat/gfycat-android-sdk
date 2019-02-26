@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+
+        minSdkVersion rootProject.minSdkVersionForGfycatSdk
+        targetSdkVersion rootProject.targetSdkVersion
+
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    api project(':libCommon')
+}
+
+apply from: '../gfycat-sdk.gradle'

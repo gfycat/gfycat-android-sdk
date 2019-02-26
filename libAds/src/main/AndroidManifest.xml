@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gfycat.ads">
+
+    <application>
+        <meta-data
+            android:name="ads_plugin_class_name"
+            android:value="com.gfycat.ads.DefaultAdsPlugin" />
+    </application>
+
+</manifest>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gfycat_no_search_result">Bu arama terimi için hiçbir GIF bulunamadı</string>
+    <string name="gfycats_can_not_load_gfycats">GIF\'ler alınamadı</string>
+    <string name="gfycat_categories_find_category">Gfycat\'te Arama</string>
+    <string name="category_caption_recent">Recent</string>
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2015-present, Gfycat, Inc. All rights reserved.
+  ~
+  ~ You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
+  ~ copy, modify, and distribute this software in source code or binary form for use
+  ~ in connection with the web services and APIs provided by Gfycat.
+  ~
+  ~ As with any software that integrates with the Gfycat platform, your use of
+  ~ this software is subject to the Gfycat Terms of Service [https://gfycat.com/terms]
+  ~ and Partner Terms of Service [https://gfycat.com/partners/terms]. This copyright
+  ~ notice shall be included in all copies or substantial portions of the software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+  ~ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+  ~ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+  ~ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  ~ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  -->
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditText
+        android:id="@+id/gfycat_search_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/gfycat_abc_search_view_preferred_height"
+        android:layout_margin="@dimen/gfycat_categories_search_margin"
+        android:background="@drawable/gfycat_categories_search_background"
+        android:freezesText="true"
+        android:hint="@string/gfycat_categories_find_category"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/gfycat_hint_padding_in_search_view"
+        android:paddingRight="@dimen/gfycat_hint_padding_in_search_view"
+        android:textSize="14sp" />
+
+    <ImageButton
+        android:id="@+id/gfycat_search_close_btn"
+        android:layout_width="@dimen/gfycat_abc_search_view_preferred_height"
+        android:layout_height="@dimen/gfycat_abc_search_view_preferred_height"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/gfycat_search_content_padding"
+        android:elevation="@dimen/gfycat_categories_search_elevation"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:focusable="true" />
+
+    <ImageButton
+        android:id="@+id/gfycat_search_btn"
+        android:layout_width="@dimen/gfycat_abc_search_view_preferred_height"
+        android:layout_height="@dimen/gfycat_abc_search_view_preferred_height"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/gfycat_search_content_padding"
+        android:elevation="@dimen/gfycat_categories_search_elevation"
+        android:background="@null"
+        android:focusable="true" />
+
+</merge>

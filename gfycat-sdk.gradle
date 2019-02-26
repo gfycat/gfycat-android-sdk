@@ -1,0 +1,139 @@
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
+apply from: '../bintray.passwords.gradle'
+apply plugin: 'license'
+
+/**
+ * This script is responsible for gfycat-sdk publishing to maven repository.
+ */
+
+ext {
+    gfycatSdkGroupId = 'com.gfycat.android'
+    gfycatSdkVersion = '0.7.4-SNAPSHOT'
+
+    /**
+     * This is list of libraries that we are going to publish.
+     * Also it declares mapping from local module names to public names.
+     */
+    sdkLibNames = [
+            libAds          : 'gfycat-ads-facebook',
+            libCommon       : 'gfycat-common',
+            libGfyPicker    : 'gfycat-picker',
+            libGfyCore      : 'gfycat-core',
+            libFrameSequence: 'gfycat-frame-sequence',
+            libGfyPlayer    : 'gfycat-player-api',
+            libGfyGifPlayer : 'gfycat-gif-player',
+            libGfyWebpPlayer: 'gfycat-webp-player'
+    ]
+}
+
+license {
+    skipExistingHeaders true
+    strictCheck true
+    exclude "**/*.xml"
+}
+
+/**
+ * Change archivesBaseName as described in sdkLibNames mapping above.
+ */
+android {
+    defaultConfig {
+        archivesBaseName = sdkLibNames[project.name]
+    }
+}
+
+bintray {
+    user = getGfycatBintrayUser()
+    key = getGfycatBintrayApiKey()
+    publications = ['maven']
+    publish = true
+    pkg {
+        repo = 'maven'
+        name = sdkLibNames[project.name]
+        userOrg = 'gfycat'
+        vcsUrl = 'https://github.com/gfycat/gfycat-android-sdk'
+
+        version {
+            name = gfycatSdkVersion
+            released = new Date()
+        }
+    }
+}
+
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    exclude '**/R.html', '**/R.*.html', '**/index.html'
+    failOnError false
+}
+
+task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+
+            groupId gfycatSdkGroupId
+            artifactId sdkLibNames[project.name]
+            version gfycatSdkVersion
+
+            artifact bundleReleaseAar
+            artifact androidSourcesJar
+            artifact androidJavadocsJar
+
+            pom {
+                name = 'Gfycat SDK'
+                description = 'Android client for gfycat.com'
+                url = 'https://github.com/gfycat/gfycat-android-sdk'
+
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                withXml {
+                    def dependenciesNode = asNode().appendNode('dependencies')
+                    // api already included in configurations.implementation dependencies list.
+                    configurations.implementation.allDependencies.each {
+
+                        if (it.group != null && (it.name != null && "unspecified" != it.name) && (it.version != null && "unspecified" != it.version)) {
+                            /**
+                             * Iterate over the compile dependencies (we don't want the test ones), adding a <dependency> node for each
+                             */
+                            def dependencyNode = dependenciesNode.appendNode('dependency')
+                            dependencyNode.appendNode('groupId', it.group)
+                            dependencyNode.appendNode('artifactId', it.name)
+                            dependencyNode.appendNode('version', it.version)
+                        } else if (it instanceof ProjectDependency && sdkLibNames[it.name]) {
+                            /**
+                             * It is local project dependency and it is declared in sdkLibNames above.
+                             */
+                            def dependencyNode = dependenciesNode.appendNode('dependency')
+                            dependencyNode.appendNode('groupId', gfycatSdkGroupId)
+                            dependencyNode.appendNode('artifactId', sdkLibNames[it.name])
+                            dependencyNode.appendNode('version', gfycatSdkVersion)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    repositories {
+        /**
+         * Install to local repository
+         */
+        maven {
+            url System.getProperty("user.home") + "/.m2/repository"
+        }
+    }
+}

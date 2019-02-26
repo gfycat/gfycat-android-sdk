@@ -7,7 +7,12 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
     }
+}
+
+plugins {
+    id "com.github.hierynomus.license" version "0.13.1"
 }
 
 allprojects {
@@ -20,3 +25,5 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+apply from: rootProject.file('dependencies.gradle')

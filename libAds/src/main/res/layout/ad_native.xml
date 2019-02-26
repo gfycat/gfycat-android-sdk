@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2015-present, Gfycat, Inc. All rights reserved.
+  ~
+  ~ You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
+  ~ copy, modify, and distribute this software in source code or binary form for use
+  ~ in connection with the web services and APIs provided by Gfycat.
+  ~
+  ~ As with any software that integrates with the Gfycat platform, your use of
+  ~ this software is subject to the Gfycat Terms of Service [https://gfycat.com/terms]
+  ~ and Partner Terms of Service [https://gfycat.com/partners/terms]. This copyright
+  ~ notice shall be included in all copies or substantial portions of the software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+  ~ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+  ~ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+  ~ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  ~ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  -->
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    card_view:cardCornerRadius="@dimen/native_ad_corner_radius">
+
+    <com.facebook.ads.MediaView
+        android:id="@+id/native_ad_media"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/native_ad_height"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:id="@+id/native_ad_choices_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|top"
+        android:layout_margin="5dp"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/native_ad_info_bar_bg_color"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5">
+
+            <ImageView
+                android:id="@+id/native_ad_icon"
+                android:layout_width="@dimen/native_ad_icon_size"
+                android:layout_height="@dimen/native_ad_icon_size"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="5dp" />
+
+            <TextView
+                android:id="@+id/native_ad_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/native_ad_icon"
+                android:ellipsize="end"
+                android:lines="1"
+                android:paddingRight="5dp"
+                android:textColor="@color/native_ad_text_color"
+                android:textSize="@dimen/native_ad_title_text_size"
+                tools:text="Title" />
+
+            <TextView
+                android:id="@+id/native_ad_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/native_ad_title"
+                android:layout_toRightOf="@id/native_ad_icon"
+                android:ellipsize="end"
+                android:lines="1"
+                android:paddingRight="5dp"
+                android:textColor="@color/native_ad_text_color"
+                android:textSize="@dimen/native_ad_body_text_size"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, sapien quis facilisis placerat, eros tellus posuere risus." />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/native_ad_call_to_action"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/native_ad_icon_size"
+            android:layout_weight="2"
+            android:background="@color/native_ad_call_to_action_bg_color"
+            android:gravity="center"
+            android:textColor="@color/native_ad_text_color"
+            android:textSize="@dimen/native_ad_call_to_action_text_size"
+            tools:text="Learn more" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

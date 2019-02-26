@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2015-present, Gfycat, Inc. All rights reserved.
+  ~
+  ~ You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
+  ~ copy, modify, and distribute this software in source code or binary form for use
+  ~ in connection with the web services and APIs provided by Gfycat.
+  ~
+  ~ As with any software that integrates with the Gfycat platform, your use of
+  ~ this software is subject to the Gfycat Terms of Service [https://gfycat.com/terms]
+  ~ and Partner Terms of Service [https://gfycat.com/partners/terms]. This copyright
+  ~ notice shall be included in all copies or substantial portions of the software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+  ~ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+  ~ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+  ~ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  ~ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- We are cant crop rounded corners on pre-lollipop OS because of performance. In this case
+     we using workaround - placing card mask on top of GfyCardView.
+     This drawable works like rectangle stroke with rounded corners, but user can see only inner
+     rectangle because of anti margins. Stroke width = -1 * anti margin. Stroke corner radius must
+     be bigger than desired corner radius, because inner rectangle has smaller corner radius. -->
+    <item android:left="@dimen/gfycat_video_preview_kitkat_anti_padding"
+        android:top="@dimen/gfycat_video_preview_kitkat_anti_padding"
+        android:right="@dimen/gfycat_video_preview_kitkat_anti_padding"
+        android:bottom="@dimen/gfycat_video_preview_kitkat_anti_padding">
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="@dimen/gfycat_video_preview_rounded_corner_radius"
+                android:color="@color/gfycat_grey_background" />
+            <corners android:radius="@dimen/gfycat_video_preview_double_corner_radius" />
+        </shape>
+    </item>
+</layer-list>

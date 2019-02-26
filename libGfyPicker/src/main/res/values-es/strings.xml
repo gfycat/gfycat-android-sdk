@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gfycat_no_search_result">No se encontraron GIF para este término de búsqueda</string>
+    <string name="gfycats_can_not_load_gfycats">No se pudieron recuperar los GIF</string>
+    <string name="gfycat_categories_find_category">Buscar en Gfycat</string>
+    <string name="category_caption_recent">Recent</string>
+</resources>

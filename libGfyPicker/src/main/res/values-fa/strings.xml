@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gfycat_no_search_result">برای این واژه گیفی یافت نشد</string>
+    <string name="gfycats_can_not_load_gfycats">بارگیری گیف ناموفق بود</string>
+    <string name="gfycat_categories_find_category">جستجو در Gfycat...</string>
+    <string name="category_caption_recent">Recent</string>
+</resources>

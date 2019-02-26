@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gfycat_no_search_result">GIF по даному запиту не знайдено</string>
+    <string name="gfycats_can_not_load_gfycats">Не вдалося отримати GIF</string>
+    <string name="gfycat_categories_find_category">Пошук у Gfycat</string>
+    <string name="category_caption_recent">Останні</string>
+</resources>

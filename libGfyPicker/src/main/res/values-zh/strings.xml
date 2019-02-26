@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gfycat_no_search_result">未找到此搜索项的 GIF</string>
+    <string name="gfycats_can_not_load_gfycats">无法检索到 GIF</string>
+    <string name="gfycat_categories_find_category">在 Gfycat 中搜索</string>
+    <string name="category_caption_recent">Recent</string>
+</resources>

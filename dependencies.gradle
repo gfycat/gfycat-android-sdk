@@ -1,0 +1,35 @@
+ext {
+    // build parameters
+    compileSdkVersion = 28
+    buildToolsVersion = "28.0.3"
+    minSdkVersionForGfycatSdk = 16
+    targetSdkVersion = 28
+
+    // support library
+    supportLibVersion = "27.0.2"
+
+    // rx java
+    rxAndroidVersion = "2.1.0"
+    rxJavaVersion = "2.2.4"
+
+    // networking
+    retrofit2Version = "2.5.0"
+    okHttp3Version = "3.12.1"
+    gsonVersion = "2.3.1"
+    picassoVersion = "2.5.2"
+    picassoOkHttpDownloaderVersion = "1.0.2"
+
+    // lib ads
+    facebookLibVersion = "4.29.0"
+    facebookAudienceNetworkVersion = "4.25.0"
+
+    // common libs
+    commonsIoUtilsVersion = "2.0.1"
+
+    // tests
+    junitVersion = "4.12"
+    robolectricVersion = "3.2.2"
+    mockitoCoreVersion = "2.21.0"
+    androidXtestCoreVersion = "1.1.0"
+    androidXespressoCoreVersion = "3.1.1"
+}

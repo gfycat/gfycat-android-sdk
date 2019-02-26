@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gfycat_no_search_result">Không tìm thấy ảnh GIF nào cho từ khóa này</string>
+    <string name="gfycats_can_not_load_gfycats">Không thể lấy ảnh GIF</string>
+    <string name="gfycat_categories_find_category">Tìm kiếm trong Gfycat</string>
+    <string name="category_caption_recent">Recent</string>
+</resources>

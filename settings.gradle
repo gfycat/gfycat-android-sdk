@@ -1,1 +1,10 @@
-include ':app', ':appGifOnly'
+include ':app',
+        ':appGifOnly',
+        ':libGfyPlayer',
+        ':libGfyGifPlayer',
+        ':libGfyWebpPlayer',
+        ':libFrameSequence',
+        ':libGfyPicker',
+        ':libGfyCore',
+        ':libCommon',
+        ':libAds'

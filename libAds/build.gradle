@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersionForGfycatSdk
+        targetSdkVersion rootProject.targetSdkVersion
+
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation project(':libCommon')
+    implementation project(':libGfyCore')
+
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "com.facebook.android:facebook-android-sdk:$facebookLibVersion"
+    implementation "com.facebook.android:audience-network-sdk:$facebookAudienceNetworkVersion"
+}
+
+apply from: '../gfycat-sdk.gradle'

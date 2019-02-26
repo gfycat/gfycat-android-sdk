@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Notification Channels -->
+    <string name="channel_video_ready_name">Готовность видео</string>
+    <string name="channel_video_ready_description">Готовность видео для редактирования и создания GIFок</string>
+
+    <string name="channel_gif_processing_name">Обработка GIF</string>
+    <string name="channel_gif_processing_description">Ми уведомим вас о статусе обработки GIF</string>
+
+    <string name="channel_push_updates_name">Push updates</string>
+    <string name="channel_push_updates_description">Get latest updates from Gfycat</string>
+</resources>

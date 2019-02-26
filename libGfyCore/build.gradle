@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    defaultConfig {
+
+        compileSdkVersion rootProject.compileSdkVersion
+        buildToolsVersion rootProject.buildToolsVersion
+
+        minSdkVersion rootProject.minSdkVersionForGfycatSdk
+        targetSdkVersion rootProject.targetSdkVersion
+
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+    testOptions {
+        unitTests.all {
+            // All the usual Gradle options.
+            testLogging {
+                events "passed", "skipped", "failed", "standardOut", "standardError"
+                outputs.upToDateWhen { false }
+                showStandardStreams = true
+            }
+        }
+    }
+
+}
+
+
+
+dependencies {
+    api project(':libCommon')
+
+    api "com.squareup.okhttp3:okhttp:$okHttp3Version"
+    api "com.squareup.retrofit2:converter-gson:$retrofit2Version"
+    api "com.squareup.retrofit2:retrofit:$retrofit2Version"
+    api "com.squareup.retrofit2:adapter-rxjava2:$retrofit2Version"
+
+    androidTestImplementation "androidx.test.espresso:espresso-core:$androidXespressoCoreVersion"
+
+    testImplementation "androidx.test:core:$androidXtestCoreVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoCoreVersion"
+
+    testImplementation "com.squareup.retrofit2:retrofit-mock:$retrofit2Version"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+    testImplementation "junit:junit:$junitVersion"
+}
+
+apply from: '../gfycat-sdk.gradle'
