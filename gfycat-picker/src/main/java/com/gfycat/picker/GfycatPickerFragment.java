@@ -36,7 +36,6 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
-import com.gfycat.common.Function;
 import com.gfycat.common.ProgressBarController;
 import com.gfycat.common.utils.Assertions;
 import com.gfycat.common.utils.Logging;
@@ -47,7 +46,6 @@ import com.gfycat.core.FeedIdentifierFactory;
 import com.gfycat.core.GfyPrivateHelper;
 import com.gfycat.core.PublicFeedIdentifier;
 import com.gfycat.core.RecentFeedIdentifier;
-import com.gfycat.core.db.CloseMode;
 import com.gfycat.core.gfycatapi.pojo.Gfycat;
 import com.gfycat.core.gfycatapi.pojo.GfycatCategory;
 import com.gfycat.picker.bi.KeyboardLogger;
@@ -70,9 +68,6 @@ import java.lang.reflect.Method;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * This is a standalone Gfycat picker. Displays a selection of top categories, recently tapped Gfycats category.
@@ -115,6 +110,7 @@ public class GfycatPickerFragment extends Fragment implements CategoriesFragment
 
     private DataLoadProgressListener dataLoadProgressListener;
 
+    private GfycatFeedSelectionResolver feedSelectionResolver = new DefaultFeedSelectionResolver();
     private Set<OnGfycatSelectedListener> onGfycatSelectedListeners = new HashSet<>();
 
     private GoToSearchInCategory goToSearchInCategory = new GoToSearchInCategory();
@@ -132,8 +128,6 @@ public class GfycatPickerFragment extends Fragment implements CategoriesFragment
 
     private boolean closeOnGfycatClick = false;
     private boolean recentCategoryEnabled = false;
-
-    private FeedIdentifier trendingIdentifierSample = PublicFeedIdentifier.fromReaction(TRENDING_TAG);
 
     private float categoryCornerRadius;
     private float gfycatCornerRadius;
@@ -166,6 +160,13 @@ public class GfycatPickerFragment extends Fragment implements CategoriesFragment
      * Provide possibility to add some views on top of categories fragments.
      */
     public void onCreateAdditionalViews(LayoutInflater inflater, ViewGroup fragmentRootView, @Nullable Bundle savedInstanceState) {
+    }
+
+    /**
+     * Application may provide custom feed selection resolver, see {@link DefaultFeedSelectionResolver} as reference.
+     */
+    public void setFeedSelectionResolver(GfycatFeedSelectionResolver feedSelectionResolver) {
+        this.feedSelectionResolver = feedSelectionResolver != null ? feedSelectionResolver : new DefaultFeedSelectionResolver();
     }
 
     /**
@@ -323,6 +324,11 @@ public class GfycatPickerFragment extends Fragment implements CategoriesFragment
 
     public float getGfycatCornerRadius() {
         return gfycatCornerRadius;
+    }
+
+    @Override
+    public GfycatFeedSelectionResolver getFeedSelectionResolver() {
+        return feedSelectionResolver;
     }
 
     /**
@@ -576,28 +582,13 @@ public class GfycatPickerFragment extends Fragment implements CategoriesFragment
 
         LazyLogger.get().logTapCategory(category.getTag());
 
-        /**
+        /*
          * We do not want not trigger actual search.
+         * Just want to set category title.
          */
         setCurrentSearchQuerySilently(category.getTagText());
 
-        FeedIdentifier feedIdentifier = resolveFeedIdentifier(category);
-        String digest = TRENDING_TAG.equals(category.getTag()) ? category.getDigest() : "";
-
-        // recent is locally cached and should be created at this point, so open it immediately
-        boolean isRecentFeed = RecentFeedIdentifier.recent().getType().equals(feedIdentifier.getType());
-        if (isRecentFeed || category.getGfycat() == null) {
-            completeOpenCategory(feedIdentifier);
-        } else {
-            GfyPrivateHelper.getFeedManagerImpl().toObservable()
-                    .flatMap(feedManager -> feedManager.createFeedIfNotExist(feedIdentifier, category.getGfycat(), digest, CloseMode.Open))
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(
-                            aVoid -> Function.ignore(),
-                            throwable -> completeOpenCategory(feedIdentifier),
-                            () -> completeOpenCategory(feedIdentifier));
-        }
+        completeOpenCategory(getFeedSelectionResolver().resolveCategoryFeed(category));
     }
 
     @Override
@@ -690,13 +681,6 @@ public class GfycatPickerFragment extends Fragment implements CategoriesFragment
         return TextUtils.isEmpty(getSearchFilter()) && currentCategoriesFragment instanceof OneCategoryFeedFragment;
     }
 
-    public interface OnGfycatSelectedListener {
-        /**
-         * Called when user clicked on gfycat in identifier.getName() category.
-         */
-        void onGfycatSelected(FeedIdentifier identifier, Gfycat gfycat, int position);
-    }
-
     private class ExitFromCategoryOnEmptySearch implements Runnable {
         @Override
         public void run() {
@@ -713,8 +697,7 @@ public class GfycatPickerFragment extends Fragment implements CategoriesFragment
         public void run() {
             Logging.d(LOG_TAG, "GoToSearchInCategory::run()");
             if (isResumed()) {
-                changeFragment(OneCategoryFeedFragment.create(PublicFeedIdentifier.fromSearch(searchController.getSearchQuery())));
-                insideCategory = false;
+                completeOpenCategory(getFeedSelectionResolver().resolveSearchFeed(searchController.getSearchQuery()));
             }
         }
     }

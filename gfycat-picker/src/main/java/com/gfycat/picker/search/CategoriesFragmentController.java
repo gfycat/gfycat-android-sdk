@@ -19,6 +19,7 @@ package com.gfycat.picker.search;
 import com.gfycat.core.FeedIdentifier;
 import com.gfycat.core.gfycatapi.pojo.Gfycat;
 import com.gfycat.core.gfycatapi.pojo.GfycatCategory;
+import com.gfycat.picker.GfycatFeedSelectionResolver;
 
 /**
  * Created by dekalo on 26.01.17.
@@ -30,6 +31,7 @@ public interface CategoriesFragmentController {
      * acceptable range [0.25, 4]
      */
     float getCategoryAspectRatio();
+
     /**
      * @return categories column count.
      */
@@ -86,4 +88,9 @@ public interface CategoriesFragmentController {
      * Returns gfycat corner radius.
      */
     float getGfycatCornerRadius();
+
+    /**
+     * Returns feed selection resolver.
+     */
+    GfycatFeedSelectionResolver getFeedSelectionResolver();
 }

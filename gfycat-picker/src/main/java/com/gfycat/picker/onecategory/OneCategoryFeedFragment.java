@@ -33,7 +33,6 @@ import com.gfycat.common.utils.Logging;
 import com.gfycat.common.utils.Sugar;
 import com.gfycat.core.AdsManager;
 import com.gfycat.core.FeedIdentifier;
-import com.gfycat.core.PublicFeedIdentifier;
 import com.gfycat.core.bi.BIContext;
 import com.gfycat.core.gfycatapi.pojo.Gfycat;
 import com.gfycat.picker.R;
@@ -198,7 +197,7 @@ public class OneCategoryFeedFragment extends BaseColumnFeedFragment implements C
     private void internalSetFilter(String filter) {
         Logging.d(LOG_TAG, "internalSetFilter(", filter, ")");
         LazyLogger.get().logSearchVideos(filter);
-        changeFeed(PublicFeedIdentifier.fromSearch(filter));
+        changeFeed(getCategoriesFragmentController().getFeedSelectionResolver().resolveSearchFeed(filter));
     }
 
     @Override
