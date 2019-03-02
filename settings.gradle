@@ -1,10 +1,10 @@
 include ':app',
         ':appGifOnly',
-        ':libGfyPlayer',
-        ':libGfyGifPlayer',
-        ':libGfyWebpPlayer',
-        ':libFrameSequence',
-        ':libGfyPicker',
-        ':libGfyCore',
-        ':libCommon',
-        ':libAds'
+        ':gfycat-player-api',
+        ':gfycat-gif-player',
+        ':gfycat-webp-player',
+        ':gfycat-frame-sequence',
+        ':gfycat-picker',
+        ':gfycat-core',
+        ':gfycat-common',
+        ':gfycat-ads-facebook'

@@ -16,14 +16,14 @@ ext {
      * Also it declares mapping from local module names to public names.
      */
     sdkLibNames = [
-            libAds          : 'gfycat-ads-facebook',
-            libCommon       : 'gfycat-common',
-            libGfyPicker    : 'gfycat-picker',
-            libGfyCore      : 'gfycat-core',
-            libFrameSequence: 'gfycat-frame-sequence',
-            libGfyPlayer    : 'gfycat-player-api',
-            libGfyGifPlayer : 'gfycat-gif-player',
-            libGfyWebpPlayer: 'gfycat-webp-player'
+            'gfycat-ads-facebook'  : 'gfycat-ads-facebook',
+            'gfycat-common'        : 'gfycat-common',
+            'gfycat-picker'        : 'gfycat-picker',
+            'gfycat-core'          : 'gfycat-core',
+            'gfycat-frame-sequence': 'gfycat-frame-sequence',
+            'gfycat-player-api'    : 'gfycat-player-api',
+            'gfycat-gif-player'    : 'gfycat-gif-player',
+            'gfycat-webp-player'   : 'gfycat-webp-player'
     ]
 }
 

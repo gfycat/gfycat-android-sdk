@@ -1,7 +1,6 @@
 apply plugin: 'com.android.library'
 
 android {
-
     compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion rootProject.buildToolsVersion
 
@@ -19,8 +18,10 @@ android {
     }
 }
 
+
 dependencies {
-    api project(':libCommon')
+    api project(':gfycat-frame-sequence')
+    implementation project(':gfycat-core')
 }
 
 apply from: '../gfycat-sdk.gradle'

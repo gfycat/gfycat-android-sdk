@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 
 android {
+
     compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion rootProject.buildToolsVersion
 
@@ -10,18 +11,27 @@ android {
         targetSdkVersion rootProject.targetSdkVersion
 
         consumerProguardFiles 'proguard-rules.pro'
+
+        ndk {
+            abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+        }
     }
 
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
+        }
+    }
 }
 
-
 dependencies {
-    api project(':libFrameSequence')
-    implementation project(':libGfyCore')
+    api project(':gfycat-frame-sequence')
+    implementation project(':gfycat-core')
+    implementation project(':gfycat-player-api')
 }
 
 apply from: '../gfycat-sdk.gradle'

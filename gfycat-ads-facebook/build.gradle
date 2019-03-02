@@ -6,32 +6,25 @@ android {
     buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
-
         minSdkVersion rootProject.minSdkVersionForGfycatSdk
         targetSdkVersion rootProject.targetSdkVersion
 
         consumerProguardFiles 'proguard-rules.pro'
-
-        ndk {
-            abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
-        }
     }
 
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
-    externalNativeBuild {
-        ndkBuild {
-            path 'src/main/jni/Android.mk'
-        }
-    }
 }
 
 dependencies {
-    api project(':libFrameSequence')
-    implementation project(':libGfyCore')
-    implementation project(':libGfyPlayer')
+    implementation project(':gfycat-common')
+    implementation project(':gfycat-core')
+
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "com.facebook.android:facebook-android-sdk:$facebookLibVersion"
+    implementation "com.facebook.android:audience-network-sdk:$facebookAudienceNetworkVersion"
 }
 
 apply from: '../gfycat-sdk.gradle'

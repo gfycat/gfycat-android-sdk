@@ -34,7 +34,7 @@ android {
 
 
 dependencies {
-    api project(':libCommon')
+    api project(':gfycat-common')
 
     api "com.squareup.okhttp3:okhttp:$okHttp3Version"
     api "com.squareup.retrofit2:converter-gson:$retrofit2Version"

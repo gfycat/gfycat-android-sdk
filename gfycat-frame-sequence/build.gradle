@@ -6,6 +6,7 @@ android {
     buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
+
         minSdkVersion rootProject.minSdkVersionForGfycatSdk
         targetSdkVersion rootProject.targetSdkVersion
 
@@ -19,11 +20,7 @@ android {
 }
 
 dependencies {
-    implementation project(':libGfyCore')
-    implementation project(':libCommon')
-    implementation project(':libGfyWebpPlayer')
-    implementation project(':libGfyGifPlayer')
-    implementation project(':libGfyPlayer')
+    api project(':gfycat-common')
 }
 
 apply from: '../gfycat-sdk.gradle'
