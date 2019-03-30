@@ -9,7 +9,7 @@ apply plugin: 'license'
 
 ext {
     gfycatSdkGroupId = 'com.gfycat.android'
-    gfycatSdkVersion = '0.7.4'
+    gfycatSdkVersion = '0.7.5-SNAPSHOT'
 
     /**
      * This is list of libraries that we are going to publish.
