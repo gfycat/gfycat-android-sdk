@@ -9,7 +9,7 @@ apply plugin: 'license'
 
 ext {
     gfycatSdkGroupId = 'com.gfycat.android'
-    gfycatSdkVersion = '0.7.5'
+    gfycatSdkVersion = '0.7.6-SNAPSHOT'
 
     /**
      * This is list of libraries that we are going to publish.
@@ -47,10 +47,14 @@ bintray {
     key = getGfycatBintrayApiKey()
     publications = ['maven']
     publish = true
+
     pkg {
-        repo = 'maven'
+        repo = 'gfycat-android-sdk'
         name = sdkLibNames[project.name]
         userOrg = 'gfycat'
+        licenses = ['Apache-2.0']
+        websiteUrl = 'https://github.com/gfycat/gfycat-android-sdk'
+        issueTrackerUrl = 'https://github.com/gfycat/gfycat-android-sdk'
         vcsUrl = 'https://github.com/gfycat/gfycat-android-sdk'
 
         version {
