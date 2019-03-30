@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -206,6 +207,7 @@ public class OneCategoryFeedFragment extends BaseColumnFeedFragment implements C
 
         searchDisposable = searchQuery
                 .debounce(SKIP_DURATION, TimeUnit.MILLISECONDS)
+                .filter(filter -> !TextUtils.isEmpty(filter))
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::internalSetFilter);
     }
